@@ -1,9 +1,12 @@
 import { Product } from "../model/products.model.js";
+import envConfig from "../config/env.config.js";
+const slugg = envConfig.slugg || 2;
 
 export const getProducts = async (req, res) =>{
     try{
         const query = {};
         const { name, available, show, sort } = req.query;
+        const page = Number(req.query.page) || 1;
 
         if (name){
             query.name = {
@@ -28,7 +31,7 @@ export const getProducts = async (req, res) =>{
             prompt = prompt.sort(sortFix);
         }
 
-        const data = await prompt;
+        const data = await prompt.skip(slugg*(page - 1)).limit(slugg);
 
         if (!data.length){
             res.status(200).send("No Products to Show");

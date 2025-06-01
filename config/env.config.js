@@ -10,7 +10,8 @@ const config = {
             "key": process.env.API_KEY || "API Key"
         },
         "xyz": "debug",
-        "port": process.env.PORT || 5000
+        "port": process.env.PORT || 5000,
+        "slugg": process.env.SLUGG || 4
     },
     "test": {
         "db": {
@@ -20,7 +21,8 @@ const config = {
             "key": process.env.API_KEY || "API Key"
         },
         "xyz": "debug",
-        "port": process.env.PORT || 5000
+        "port": process.env.PORT || 5000,
+        "slugg": process.env.SLUGG || 5
     },
     "production": {
         "db": {
@@ -30,7 +32,8 @@ const config = {
             "key": process.env.API_KEY || "API Key"
         },
         "xyz": "error",
-        "port": process.env.PORT || 5000
+        "port": process.env.PORT || 5000,
+        "slugg": process.env.SLUGG || 5
     }
 }
 

@@ -1,12 +1,12 @@
 // impoerting all files and libraries
 import express, { urlencoded } from "express";
-import config from "./config/env.config.js";
+import envConfig from "./config/env.config.js";
 import { db } from "./config/db.config.js";
 import productsRoute from "./route/products.route.js";
 
 // Creating all constants
 const app = express();
-const port = config.port || 3000;
+const port = envConfig.port || 3000;
 
 // all middlewares
 app.use(express.json());

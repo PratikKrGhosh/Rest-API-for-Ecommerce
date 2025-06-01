@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-import config from "./env.config.js";
+import envConfig from "./env.config.js";
 
-const db_uri = config.db.uri || "database url";
+const db_uri = envConfig.db.uri || "database url";
 
 export const db = async () => {
     await mongoose.connect(db_uri, {

@@ -6,7 +6,10 @@ export const getProducts = async (req, res) =>{
         const { name, available, show, sort } = req.query;
 
         if (name){
-            query.name = name;
+            query.name = {
+                "$regex": name,
+                "$options": "i"
+            };
         }
 
         if (available){

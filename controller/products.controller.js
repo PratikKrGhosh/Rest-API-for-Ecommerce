@@ -1,4 +1,4 @@
-import { Product } from "../model/products.model.js";
+import Product from "../model/products.model.js";
 import envConfig from "../config/env.config.js";
 const slugg = envConfig.slugg || 2;
 
